@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/funcionesReportes.js"></script>  
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Alquiler de Herramientas</title>
+    </head>
+
+    <body>
+
+        <div class="min-h-full">
+            <nav class="bg-cyan-900">
+              <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <img class="h-8 w-8" src="https://res.cloudinary.com/dq2xawvpn/image/upload/v1665901222/rent-vector-icon_dkrdmn.jpg" alt="Your Company">
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a href="index.html" class="text-white hover:bg-cyan-600 hover:text-white px-2 py-2 rounded-md text-xl font-medium">Inicio</a>
+            
+                                <a href="categoria.html" class="text-white hover:bg-cyan-600 hover:text-white px-2 py-2 rounded-md text-xl font-medium">Categoria</a>
+
+                                <a href="cliente.html" class="text-white hover:bg-cyan-600 hover:text-white px-2 py-2 rounded-md text-xl font-medium">Cliente</a>
+            
+                                <a href="mensajes.html" class="text-white hover:bg-cyan-600 hover:text-white px-2 py-2 rounded-md text-xl font-medium">Mensajes</a>
+                        
+                                <a href="tool.html" class="text-white hover:bg-cyan-600 hover:text-white px-2 py-2 rounded-md text-xl font-medium">Herramientas</a>
+
+                                <a href="reservaciones.html" class="text-white hover:bg-cyan-600 hover:text-white px-2 py-2 rounded-md text-xl font-medium">Reservas</a>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+            </nav>
+        </div>  
+
+        <section class="text-gray-800 body-font relative">
+          <div class="container px-5 py-5 mx-auto">
+              <div class="flex flex-col text-center w-full mb-12">
+                  <h1 class="sm:text-5xl text-4xl font-medium title-font mb-4 text-gray-900">Reportes</h1>
+                  <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Especifique datos del cliente</p>
+                </div>
+           
+          </div>
+        </section>
+
+        <section class="text-gray-600 body-font">
+            <div class="container px-5 py-5 mx-auto">
+              <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+                <div class="sm:w-1/3 mb-10 px-4">
+                  <div class="rounded-lg h-64 overflow-hidden">
+                    <img alt="content" class="object-cover object-center h-full w-full" src="https://res.cloudinary.com/dq2xawvpn/image/upload/v1665945422/muestra-del-status-quo-38276915_chzhzp.jpg">
+                  </div>
+                  <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Reporte por estado</h2>
+                  <p class="leading-relaxed text-base">Genera el reporte por el estado de las reservas</p>
+                  <button onclick="getStatus()" class="flex mx-auto mt-6 text-white bg-cyan-900 border-0 py-2 px-5 focus:outline-none hover:bg-cyan-600 rounded text-lg">Estado</button>
+                </div>
+                <div class="sm:w-1/3 mb-10 px-4">
+                  <div class="rounded-lg h-64 overflow-hidden">
+                    
+                    <div class="p-2 w-1/2">
+                    
+                      <label for="name" class="leading-7 text-sm text-gray-600 ">Fecha inicial</label>
+                      <input type="date" id="startDate1" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-700 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+                  </div>
+
+                  <div class="p-2 w-1/2">
+                    
+                    <label for="name" class="leading-7 text-sm text-gray-600">Fecha final</label>
+                    <input type="date" id="startDate2" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-700 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+
+                </div>
+
+                  </div>
+                  <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Reporte rango de Fechas</h2>
+                  <p class="leading-relaxed text-base">Genera el reporte por un rango de fechas definido</p>
+                  <button onclick="getFechas()" class="flex mx-auto mt-6 text-white bg-cyan-900 border-0 py-2 px-5 focus:outline-none hover:bg-cyan-600 rounded text-lg">Fechas</button>
+                </div>
+
+                <div class="sm:w-1/3 mb-10 px-4">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                      <img alt="content" class="object-cover object-center h-full w-full" src="https://res.cloudinary.com/dq2xawvpn/image/upload/v1665945640/12-herramientas-indispensables-para-tu-hogar-4026-mainImage-2_qra7ru.jpg">
+                    </div>
+                    <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Reporte Clientes</h2>
+                    <p class="leading-relaxed text-base">Genera el reporte de reservas por clientes</p>
+                    <button onclick="getClientes()" class="flex mx-auto mt-6 text-white bg-cyan-900 border-0 py-2 px-5 focus:outline-none hover:bg-cyan-600 rounded text-lg">Clientes</button>
+                  </div>
+              </div>
+            </div>
+          </section>
+
+        
+
+        
+
+        <div id="resultado6"></div>
+
+        
+
+        <div id="resultado7"></div>
+
+        
+        <div id="resultado8"></div>
+    </body>
+</html>
